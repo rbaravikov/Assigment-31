@@ -6,6 +6,14 @@
   font-family: Montserrat;
 }
 
+nav {
+  background: #04cdae;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+
 header {
   background: #04cdae;
   color: white;
@@ -59,13 +67,18 @@ main button.active {
   color: #04cdae;
 }
 
-main .add-property {
+nav a, main .add-property {
   text-decoration: none;
   padding: 10px;
   background: #04cdae;
   color: rgba(255, 255, 255, 0.473);
   border-radius: 4px;
   transition: 0.1s;
+}
+
+nav a:hover{
+  background: white;
+  color: #04cdae;
 }
 
 main .add-property:hover {

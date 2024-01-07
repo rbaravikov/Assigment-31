@@ -17,7 +17,6 @@ const Home = () => {
                   <button className="city-btn">Klaipėda</button>
                   <button className="city-btn">All</button>
               </div>
-              <a href="add.html" className="add-property">Add Property +</a>
           </div>
       </main>
       
