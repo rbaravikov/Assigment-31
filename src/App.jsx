@@ -1,24 +1,22 @@
-import { BrowserRouter, Form, Route, Routes, Link } from 'react-router-dom'
-import { useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
 import Add from './pages/Add'
+import Nav from './pages/Nav'
+import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
-  // URL = "https://robust-safe-crafter.glitch.me/"
+  const [selected, setSelected] = useState('Home')
+
   return (
 
     <>
     <BrowserRouter>
-      <nav>
-        <Link to='/'>Home page</Link>
-        <Link to='/add'>Add property</Link>
-      </nav>
-      
+      <Nav selected={selected} setSelected={setSelected} />
+
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/add' element={<Add/>}/>
+        <Route path='/' element={<Home setSelected={setSelected}/>}/>
+        <Route path='/add' element={<Add setSelected={setSelected}/>}/>
       </Routes>
 
     </BrowserRouter>

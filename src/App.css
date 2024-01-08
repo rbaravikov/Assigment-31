@@ -76,8 +76,8 @@ nav a, main .add-property {
   transition: 0.1s;
 }
 
-nav a:hover{
-  background: white;
+nav a:hover, .selected {
+  background: gainsboro;
   color: #04cdae;
 }
 
