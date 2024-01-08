@@ -3,14 +3,14 @@ import { useState, useEffect } from "react"
 const Home = () => {
   const BASE_URL = "https://robust-safe-crafter.glitch.me/"
   const [data, setData] = useState([])
-  const [filteredData, setFilteredData] = useState()
+  const [dataBackup, setDataBackup] = useState('')
   
   useEffect(() => {
       const fetchData = async () => {
           const resp = await fetch(BASE_URL)
           const result = await resp.json()
           setData(result)
-          setFilteredData(result)
+          setDataBackup(result)
       }
   
       fetchData()
@@ -18,10 +18,9 @@ const Home = () => {
 
   const filterData = (selection) => {
     if(selection) {
-      setFilteredData(data.filter(el => el.city===selection))
-      console.log(filteredData)
+      setData(dataBackup.filter(el => el.city===selection))
     } else {
-      setFilteredData(data)
+      setData(dataBackup)
     }
   }
 
@@ -48,7 +47,7 @@ const Home = () => {
       
       <section className="cards">
 
-        {filteredData.map((x, index) => (
+        {data.map((x, index) => (
           <div className="card" key={index}>
             <img src={x.image} alt={x.city}/>
             <div className="text">

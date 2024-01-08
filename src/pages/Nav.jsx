@@ -3,9 +3,7 @@ import { Link } from "react-router-dom"
 const Nav = ({selected, setSelected}) => {
   
   const setPage = (e) => {
-    console.log(e.target.innerText)
     e.target.innerText === 'Add property' ? setSelected('Add') : setSelected('Home')
-    
   }
 
 

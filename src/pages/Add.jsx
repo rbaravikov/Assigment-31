@@ -9,7 +9,6 @@ const Add = ({setSelected}) => {
     const handleInput = (e) => {
     const {name, value} = e.target
     setInputs({...inputs, [name]: value})
-    console.log(inputs)
     }
     
     const handleSubmit = async (e) => {
@@ -34,9 +33,8 @@ const Add = ({setSelected}) => {
             if(resp.ok) {     
             const result = await resp.json()
             alert("Success")
-            console.log(result)
+            setSelected('Home')
             navigate("/")
-            setSelected(() => 'Add')
             }
     
         } catch (error) {
@@ -69,7 +67,7 @@ const Add = ({setSelected}) => {
                 <option value hidden>Miestas</option>
                 <option value="Vilnius">Vilnius</option>
                 <option value="Kaunas">Kaunas</option>
-                <option value="Klaipėda">Klaipėda</option>
+                <option value="Klaipeda">Klaipėda</option>
             </select>
             <a id="submit" className="add-property" onClick={handleSubmit}>Add Property +</a>
         </form>
